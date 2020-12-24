@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="todo.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+  <script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="dist/clipboard.min.js"></script>
+
+</head>
+<body>
+  <p>Enter new Event Name:</p>
+  <input type="text" placeholder="Enter new event">
+
+  <p>Enter new Category Event Name:</p>
+  <p><input type="text" placeholder="Event category" list="categoryList"></p>
+  <datalist id="categoryList">
+    <option value="Personal"></option>
+    <option value="Work"></option>
+  </datalist>
+  <p>Enter date for the Event:</p>
+  <p><input type="date" id="dateInput"></p>
+
+  <p>Enter Time Slot if you want to Book:</p>
+  <p><input type="time" id="timeInput"></p>
+  <button id="addBtn">Add Event</button>
+  <br>
+  <br>
+  <b>NOTE: AFTER CLICKING 'Add Event' PLEASE REFRESH THE PAGE SO THE EVENT DATA GETS STORED ON THE CLOUD (DynamoDB)</b>
+  <p><button id="sortBtn">Sort</button></p>
+  <p><button>Share Calendar (copy)</button></p>
+    <div class="abgne"></div>
+  <ul></ul>
+  <table id="todoTable">
+    <tr>
+      <td></td>
+      <td>Date</td>
+      <td>Time Slot</td>
+      <td>Event</td>
+      <td>
+        <select id="categoryFilter">
+        </select>
+      </td>
+      <td>Click on the bin Icon to Delete Event</td>
+    </tr>
+  </table>
+
+  <div id='calendar'></div>
+  <script src="eventCalendar.js"></script>
+</body>
+</html>
